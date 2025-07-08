@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- Font Awesome Icons CDN -->
+<link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+  integrity="sha512-yH+I2M5JPJ7nZ+OpJBNX9rLbwTrADsZmPDUhVV/W8tPGlEKzZqfHyDl0m9PBPOJLubYz5qFRjUASqF3ccubkjQ=="
+  crossorigin="anonymous"
+  referrerpolicy="no-referrer"
+/>
+
+    <style>
+       
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #fffaf6;
+    color: #333;
+    line-height: 1.6;
+}
+
+.container {
+    width: 100%;
+    padding-bottom: 50px;
+}
+
+.header{
+            display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-left: 160px;
+      padding-right: 160px;
+      background-color: white;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+      position: sticky;
+      top: 0;
+      z-index: 10;
+
+        }
+        .nav-links {
+      display: flex;
+      gap: 100px;
+      list-style: none;
+
+    }
+
+    .nav-links li {
+      cursor: pointer;
+      font-weight: 500;
+      font-size: 30px;
+      text-decoration: none;
+    }
+    .nav-links li img{
+        display: flex;
+        gap: 100px;
+        height: 40px;
+        width: 40px;
+    }
+    .nav-links li a {
+    text-decoration: none;
+    color: black; 
+}
+
+.nav-links li a:hover {
+    color: #FF6347; 
+}
+.main {
+    text-align: center;
+    padding: 40px 20px;
+    background: linear-gradient(to right, #fff8f2, #ffece1);
+}
+
+.main img {
+    max-width: 90%;
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+}
+
+.main h1 {
+    font-size: 42px;
+    margin-top: 30px;
+    color: #d46a6a;
+}
+
+/* Food Sections */
+.food {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: center;
+    padding: 40px 20px;
+}
+
+.part {
+    background-color: #ffffff;
+    flex: 0 0 calc(50% - 40px);
+    border-radius: 16px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.part:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+}
+
+.part img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-bottom: 1px solid #eee;
+}
+
+.upper {
+    padding: 20px;
+}
+
+.part h2 {
+    font-size: 24px;
+    color: #ff6f61;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.part h3 {
+    font-size: 18px;
+    color: #555;
+    margin-top: 15px;
+}
+
+.items, .directions ul {
+    padding-left: 20px;
+    margin-top: 10px;
+    list-style: disc;
+}
+
+.items li, .directions ul li {
+    margin-bottom: 8px;
+    font-size: 15px;
+}
+.footer {
+  background-color: #000;
+  color: white;
+  font-family: Arial, sans-serif;
+  font-size: 13px;
+  padding: 20px;
+}
+
+.footer-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  padding-bottom: 15px;
+  border-bottom: 1px solid #444;
+}
+
+.social-icons i {
+  color: white;
+  margin: 0 8px;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.footer-links a {
+  margin: 0 10px;
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.footer-links a:hover {
+  text-decoration: underline;
+}
+
+.back-to-top {
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin-top: 15px;
+}
+
+.footer-bottom .footer-left {
+  flex: 1;
+  padding: 5px 0;
+}
+
+.footer-bottom .footer-right a {
+  margin: 0 10px;
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  white-space: nowrap;
+}
+
+.footer-bottom .footer-right a:hover {
+  text-decoration: underline;
+}
+html {
+  scroll-behavior: smooth;
+}
+
+@media (max-width: 768px) {
+    .part {
+        flex: 0 0 100%;
+    }
+    
+    .header {
+        flex-direction: column;
+        padding: 20px;
+    }
+
+    .nav-links {
+        gap: 30px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .main h1 {
+        font-size: 32px;
+    }
+}
+
+
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <ul class="nav-links">
+                <li><a href="home.html">Home</a></li>
+                <li><a href="#">Menu</a></li>
+                <li><a href="#">How it works</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Contact</a></li>
+                <li><img src="data:image/png;base64,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"></li>
+            </ul>
+        </div>
+        <div class="main">
+            <img src="https://imgstore.sndimg.com/f_auto,c_thumb,q_55,w_1000,ar_5:2/foodcom/images/be27babc-a2cb-4807-a7cf-f492f190f130.jpg">
+            <h1>COMFORT FOOD CLASSICS</h1>
+        </div>
+        <div class="food">
+            <div class="part">
+                <div class="upper">
+                    <img src="https://img.sndimg.com/food/image/upload/w_621,h_349,fl_progressive,c_fill,q_80/v1/img/recipes/10/85/22/dAngu0ifTDe2Ao3k4LuJ_DGC%206%20-%20final_4.jpg">
+                    <h2>DINNER-STYLE GRILLED CHEESE</h2>
+                    <h3>INGREDIENTS</h3>
+                    <ul class="items">
+                        <li>2 slices bread</li>
+                        <li>1 slice cheese</li>
+                        <li>1 tabelspoon mayonnaise</li>
+                    </ul>
+                    <div class="directions">
+                        <h3>DIRECTIONS</h3>
+                        <ul>
+                            <li>Heat a small skillet to medium.</li>
+                            <li>Using a butter knife, spread half of mayonnaise onto one slice of the bread, place mayo side down in the skillet.</li>
+                            <li>Spread remaining mayonnaise onto second slice of bread and place mayonnaise side up on top of cheese</li>
+                            <li>Cook 3 minutes, or until bread is toasty brown, turn and repeat.</li>
+                            
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="part">
+                <div class="upper">
+                    <img src="https://img.sndimg.com/food/image/upload/w_752,h_423,c_fill,fl_progressive,q_80/v1/img/recipes/86/19/fy9TVYwSzilO3ovFJ4xy_0S9A7197.jpg">
+                    <h2>HOMEMADE BAKED MACARONI & CHEESE</h2>
+                    <h3>INGREDIENTS</h3>
+                    <ul class="items">
+                        <li>3 tablespoons butter</li>
+                        <li>3 tabelspoons flour</li>
+                        <li>2 cups milk,hot</li>
+                        <li>1/4 cup grated cheese</li>
+                        <li>1/2 cup jalapeno</li>
+                        <li>1 packet macaroni</li>
+                    </ul>
+                    <div class="directions">
+                        <h3>DIRECTIONS</h3>
+                        <ul>
+                            <li>Grease or spray with non-stick cooking spray a casserole dish.</li>
+                            <li>Melt butter in medium saucepan.</li>
+                            <li>When melted, add flour, stirring constantly for about 1 minute (until butter is absorbed).</li>
+                            <li>When melted, add flour, stirring constantly for about 1 minute (until butter is absorbed).</li>
+                            <li>When melted, add flour, stirring constantly for about 1 minute (until butter is absorbed).</li>
+                            <li>When melted, add flour, stirring constantly for about 1 minute (until butter is absorbed).</li>
+                            <li>Sprinkle the rest of the cheese on top, and bake at 400Ffor 20 minutes.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="part">
+                <div class="upper">
+                    <img src="https://img.sndimg.com/food/image/upload/f_auto,c_thumb,q_55,w_744,ar_5:4/v1/img/recipes/60/7/YNXhfXFiTPaqK1Kavh4f_french-onion-soup-4876.jpg">
+                    <h2>FRENCH ONION SOUP</h2>
+                    <h3>INGREDIENTS</h3>
+                    <ul class="items">
+                        <li>5 onions, unpeeled</li>
+                        <li>1/2 cup butter</li>
+                        <li>black peeper</li>
+        
+                        <li>1 bay leaf</li>
+                        
+                    </ul>
+                    <div class="directions">
+                        <h2>DIRECTIONS</h2>
+                        <ul>
+                            <li>Peel onions and slice 1/8 inch thick,</li>
+                            <li>Melt butter in a 6-quart (or larger) stockpot. Add onions; cook, uncovered, over low heat for 1 1/2 hours, stirring occasionally.</li>
+                            <li>Stir in pepper, paprika and bay leaf; saute over low heat 10 minutes more, stirring frequently.</li>
+                            <li>Reduce heat and simmer slowly for 2 hours.</li>
+                            <li>Adjust color to a rich brown with caramel coloring, season with salt. Refrigerate overnight. To serve, heat soup in microwave or on stove top.</li>
+                            <li>If desired, pour into ovenproof crocks or bowls.</li>
+                            <li>Leftover soup can be frozen.</li>
+
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="part">
+                <div class="upper">
+                    <img src="https://img.sndimg.com/food/image/upload/f_auto,c_thumb,q_55,w_744,ar_5:4/v1/img/recipes/86/68/Uj0WUxRhRECTRFD8pryy_potato-bacon-corn-chowder-02343.jpg">
+                    <h2>WALTER'S POTATO, BACON, CORN CHOWDER</h2>
+                    <h3>INGREDIENTS</h3>
+                    <ul class="items">
+                        <li>8 slices bacon, diced</li>
+                        <li>4 medium potatoes, chopped</li>
+                        <li>1/2 cup onion</li>
+                        <li>1 cup cream</li>
+                        <li>1 can corn</li>
+                        <li>3 cups milk</li>
+                        
+                    </ul>
+                    <div class="directions">
+                        <h2>DIRECTIONS</h2>
+                        <ul>
+                            <li>Cook bacon in skillet till crisp-add onions until limp-drain on paper towels.</li>
+                            <li>Put potatoes and celery in large stock pot and add enough water to just cover.</li>
+                            <li>Boil until not quite tender.</li>
+                            <li>Do not drain.</li>
+                            <li>Add bacon, onions and rest of ingredients and simmer for 1/2 hour--eat & enjoy.</li>
+                            
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="part">
+                <div class="upper">
+                    <img src="https://img.sndimg.com/food/image/upload/f_auto,c_thumb,q_55,w_744,ar_5:4/v1/img/recipes/77/41/7/5XBbSGxNS6iTBNAS4P5M_BIS%25206%2520-%2520final_4.jpg">
+                    <h2>BISCUITS</h2>
+                    <h3>INGREDIENTS</h3>
+                    <ul class="items">
+                        <li>2 cups flour</li>
+                        <li>4 teaspoons baking powder</li>
+                        <li>1/3 cup butter</li>
+                        <li>3/4 cup milk</li>
+                    </ul>
+                    <div class="directions">
+                        <h2>DIRECTIONS</h2>
+                        <ul>
+                            <li>Preheat oven to 425 F Mix first 4 ingredients together in a bowl.</li>
+                            <li>Cut in butter with a pastry blender or a fork, or two knives, until crumbly.</li>
+                            <li>Add milk</li>
+                            <li>Roll or pat to 1 inch thick. (I usually pat the dough).</li>
+                            <li>Cut into circles with a biscuit cutter or a floured glass.</li>
+                            <li>Bake in 425 F for about 10- 12 minutes or until risen and nicely browned. (in my oven it usually takes 15 minutes).</li>
+                            <li>This is supposed to make 12, but I almost always only get 11 biscuits, with the size of the glass that I use.</li>
+                            
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="part">
+                <div class="upper">
+                    <img src="https://img.sndimg.com/food/image/upload/f_auto,c_thumb,q_55,w_744,ar_5:4/v1/img/recipes/71/36/0/zZhtMAzSQVWYZ0bhNz9L_0S9A6349.jpg">
+                    <h2>SOFT BREADSTICKS</h2>
+                    <h3>INGREDIENTS</h3>
+                    <ul class="items">
+                        <li>1 cup warmwater</li>
+                        <li>1/4 cup oil</li>
+                        <li>3 cups bread flour</li>
+                        <li>2 teaspoons yeast</li>
+                    </ul>
+                    <div class="directions">
+                        <h2>DIRECTIONS</h2>
+                        <ul>
+                            <li>Make dough using your favorite method- bread machine, mixer or by hand.</li>
+                            <li>Roll out into a 10x12 inch rectangle.</li>
+                            <li>Give each strip a twist and place on a greased cookie sheet.</li>
+                            <li>Let rise for at least 20 minutes or more if you have time.</li>
+                            <li>Bake at 375 for 10-15 minutes.</li>
+                            <li>Brush with butter and sprinkle with garlic salt and parmesan cheese.</li>
+                            
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="part">
+                <div class="upper">
+                    <img src="https://img.sndimg.com/food/image/upload/f_auto,c_thumb,q_55,w_744,ar_5:4/v1/img/recipes/12/86/7/QFUbfaCcRfSKYJEixTJJ_broccoli%2520soup%2520SITE-2.jpg">
+                    <h2>BROCCOLI CHEESE SOUP</h2>
+                    <h3>INGREDIENTS</h3>
+                    <ul class="items">
+                        <li>2 cups low sodium chicken broth</li>
+                        <li>3 cups chopped broccoli</li>
+                        <li>1/2 cup chopped celery</li>
+                        <li>2 tabelspoons butter</li>
+                        <li>4 tabelspoons flour</li>
+                        <li>1/2 cup cheese</li>
+                    </ul>
+                    <div class="directions">
+                        <h2>DIRECTIONS</h2>
+                        <ul>
+                            <li>In a medium saucepan, bring broth, broccoli (about 1 med. head will yield 3 cups chopped broccoli) and celery to a boil over high heat.</li>
+                            <li>Reduce heat to medium and simmer until broccoli is tender, about 10 minutes.</li>
+                            <li>Stir occasionally.</li>
+                            <li>Meanwhile, melt butter in a large saucepan over medium heat and stir in flour, salt and pepper; cook for 1 minute.</li>
+                            <li>Bring to a boil.</li>
+                            <li>Now add broccoli mixture (smooth or chunky) into large saucepan with the milk.</li>
+                            <li>Remove from heat and stir in cheese.</li>
+                            <li>Serve immediately.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="part">
+                <div class="upper">
+                    <img src="https://img.sndimg.com/food/image/upload/f_auto,c_thumb,q_55,w_744,ar_5:4/v1/img/recipes/28/83/70/lkEEsYMEQNeIRkXOvD2o_DSC04807-2.jpg">
+                    <h2>ROSEMARY'S CROCK POT PIZZA</h2>
+                    <h3>INGREDIENTS</h3>
+                    <ul class="items">
+                        <li>1 cup biscuit mix</li>
+                        <li>1/2 cup water</li>
+                        <li>1 jar pizza souce</li>
+                        <li>1 cup mozzarella cheese</li>
+                    </ul>
+                    <div class="directions">
+                        <h2>DIRECTIONS</h2>
+                        <ul>
+                            <li>Drizzle olive oil on the bottom of the crock then put about one quarter of your pizza sauce on the bottom of the crock.</li>
+                            <li>Mix up your crust and spread on top of the sauce to almost touch the sides then cover with the remaining sauce and coat it all over so it sort of swims in the sauce like a giant soft dumpling.</li>
+                            <li>Top with cheese and your chosen meat and veggies, cover and cook on high for about 2 hours. Enjoy!</li>
+                            
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="part">
+                <div class="upper">
+                    <img src="https://img.sndimg.com/food/image/upload/f_auto,c_thumb,q_55,w_744,ar_5:4/v1/img/recipes/18/58/0/GIn8mY5R2aqJfysZsxxS_IMG_4748.jpg">
+                    <h2>BAKED POTATO SALAD</h2>
+                    <h3>INGREDIENTS</h3>
+                    <ul class="items">
+                        <li>4 lbs potatoes</li>
+                        <li>1/4 cup olive oil</li>
+                        <li>1 medium green pepper</li>
+                        <li>1 medium sweet red pepper</li>
+                        <li>1 bunch green onion</li>
+                        <li>2 large tomatoes</li>
+                        <li>4 hard-boiled eggs</li>
+                        <li>1 cup mayonnnaise</li>
+                        <li>1 tabelspoon vinegar</li>
+                        <li>1 tabelspoon lemon juice</li>
+                    </ul>
+                    <div class="directions">
+                        <h2>DIRECTIONS</h2>
+                        <ul>
+                            <li>In a large bowl, toss the postatoes with oil and dressing mixes.</li>
+                            <li>Place into 2 ungreased 13x9x2 inch baking pans.</li>
+                            <li>Bake, uncovered at 400 for 45 minutes or until tender.</li>
+                            <li>Cool.</li>
+                            <li>Transfer to a large bowl, add peppers, onions, tomatoes, eggs and bacon</li>
+                            <li>Mix well.</li>
+                            <li>Pour over salad and mix gently.</li>
+                            <li>Cover and refrigerate for at least 1 hour.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="part">
+                <div class="upper">
+                    <img src="https://img.sndimg.com/food/image/upload/f_auto,c_thumb,q_55,w_744,ar_5:4/v1/img/recipes/56/78/4/IdrSRRFjQuuOuMY95wQb_MAN%25207%2520-%2520final_5.jpg">
+                    <h2>EASY MANICOTTI</h2>
+                    <h3>INGREDIENTS</h3>
+                    <ul class="items">
+                        <li>1 cup cheese</li>
+                        <li>1 teaspoon sugar</li>
+                        <li>1 egg</li>
+                        <li>1 teaspoon parsley</li>
+                        <li>1 packet manicotti</li>
+                    </ul>
+                    <div class="directions">
+                        <h2>DIRECTIONS</h2>
+                        <ul>
+                            <li>Combine Ricotta, Mozzarella, grated Parmesan, sugar, egg, nutmeg, parsley, salt and pepper to taste.</li>
+                            <li>Stuff uncooked manicotti generously with the cheese mixture, from both ends.</li>
+                            <li>Arrange manicotti in a single layer in a baking pan.</li>
+                            <li>Bring sauce to a boil and pour over manicotti, covering completely.</li>
+                            <li>Cover baking pan with aluminum foil, crimping the edges to seal tightly.</li>
+                            <li>Remove foil; sprinkle generously with additional grated cheese.</li>
+                            <li>Bake uncovered for 5 minutes more.</li>
+                           
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <footer class="footer">
+                <div class="footer-top">
+                    <div class="social-icons">
+                        <i class="fab fa-facebook-f"></i>
+                        <i class="fab fa-instagram"></i>
+                        <i class="fab fa-pinterest-p"></i>
+                        <i class="fab fa-twitter"></i>
+                        <i class="fab fa-youtube"></i>
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <div class="footer-links">
+                        <a href="#">All Categories</a>
+                        <a href="#">Site Map</a>
+                        <a href="#">About Us</a>
+                        <a href="#">Help</a>
+                    </div>
+                    <div class="back-to-top">
+                        <a href="#" class="back-to-top">
+                            <i class="fas fa-arrow-up"></i> BACK TO TOP
+                        </a>
+
+                    </div>
+                </div>
+            <div class="footer-bottom">
+                    <div class="footer-left">
+                        &copy; 2025 Warner Bros. Discovery, Inc. or its subsidiaries and affiliates. All rights reserved.
+                    </div>
+                    <div class="footer-right">
+                        <a href="#">Advertise</a>
+                        <a href="#">AdChoices</a>
+                        <a href="#">Privacy Policy</a>
+                        <a href="#">Visitor Agreement</a>
+                        <a href="#">California Privacy Policy</a>
+                        <a href="#"><strong>Do Not Sell or Share My Personal Information</strong></a>
+                    </div>
+                </div>
+            </footer>
+
+
+            
+
+
+            
+
+        </div>
+    </div>
+</body>
+</html>

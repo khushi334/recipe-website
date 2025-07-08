@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- Font Awesome CDN -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+</head>
+
+<style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    body {
+      background-color: #f6f6f6;
+      padding: 20px;
+    }
+
+    .main {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      align-items: center;
+      padding: 40px 20px;
+      	background-color: #fdf6f0;
+      
+    }
+     .part {
+      width: 90%;
+      max-width: 800px;
+      height: 600px;
+      background-color: #ffffff;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .part:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    }
+
+    .photo img {
+      width: 100%;
+      height: 500px;
+      object-fit: cover;
+    }
+    .info-box {
+      padding: 20px;
+      background-color: white;
+    }
+
+    .label {
+      font-size: 12px;
+      color: #777;
+      letter-spacing: 1px;
+      margin-bottom: 6px;
+    }
+
+    .info-box h1 {
+      font-size: 20px;
+      font-weight: bold;
+      color: #222;
+      margin-bottom: 10px;
+    }
+
+
+
+    .upper {
+  text-align: center;
+  padding: 40px 20px 20px;
+  background: #fffaf4;
+  border-radius: 10px;
+  margin-bottom: 30px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  animation: fadeIn 1s ease-in-out;
+}
+.back-button {
+      display: inline-block;
+      background-color: #d4a373;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 8px;
+      text-decoration: none;
+      font-size: 16px;
+      margin-bottom: 30px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .back-button:hover {
+      background-color: #b96f2a;
+    }
+
+.upper h1 {
+  font-size: 36px;
+  color: #4b2e2e;
+  letter-spacing: 2px;
+  font-weight: 600;
+  text-transform: uppercase;
+  position: relative;
+  display: inline-block;
+}
+
+.upper h1::after {
+  content: '';
+  display: block;
+  width: 60%;
+  height: 4px;
+  background-color: #d4a373;
+  margin: 10px auto 0;
+  border-radius: 2px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 340px;
+  padding-right: 190px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  background-color: #fff7ef;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  border-radius: 10px;
+}
+
+.logo a {
+  text-decoration: none;
+  font-size: 30px;
+  font-weight: 600;
+  color: #5c3d2e;
+}
+
+.nav-links {
+  display: flex;
+  gap: 80px;
+  list-style: none;
+  align-items: center;
+  margin: 0;
+}
+
+.nav-links li a {
+  text-decoration: none;
+  color: #5c3d2e;
+  font-size: 26px;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.nav-links li a:hover {
+  color: #d2691e;
+}
+
+.nav-links li img {
+  height: 28px;
+  width: 28px;
+}
+
+.footer {
+  background-color: #000;
+  color: white;
+  font-family: Arial, sans-serif;
+  font-size: 13px;
+  padding: 20px;
+}
+
+.footer-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  padding-bottom: 15px;
+  border-bottom: 1px solid #444;
+}
+
+.social-icons i {
+  color: white;
+  margin: 0 8px;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.footer-links a {
+  margin: 0 10px;
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.footer-links a:hover {
+  text-decoration: underline;
+}
+
+.back-to-top {
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin-top: 15px;
+}
+
+.footer-bottom .footer-left {
+  flex: 1;
+  padding: 5px 0;
+}
+
+.footer-bottom .footer-right a {
+  margin: 0 10px;
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  white-space: nowrap;
+}
+
+.footer-bottom .footer-right a:hover {
+  text-decoration: underline;
+}
+html {
+  scroll-behavior: smooth;
+}
+
+
+
+</style>
+<body>
+
+    <a href="home.html" class="back-button">← Back</a>
+
+    <div class="upper">
+        <h1>SALAD RECIPIES</h1>
+    </div>
+       
+
+
+    <div class="main">
+        <div class="part">
+            <div class="photo">
+                <img src="https://img.sndimg.com/food/image/upload/w_752,h_423,fl_progressive,c_fill,q_80/v1/img/recipes/26/41/85/lRpMpYBUQguVMK9UhzRl_pineapple-chicken-salad-peanut-dressing-asian-7665.jpg">
+
+            </div>
+            <div class="info-box">
+                <p class="label">RECIPE</p>
+                    <h1>
+                        ASIAN-STYLE SALAD
+                    </h1>
+                
+
+            </div>
+        </div>
+        <div class="part">
+            <div class="photo">
+                <img src="https://img.sndimg.com/food/image/upload/w_752,h_423,fl_progressive,c_fill,q_80/v1/img/recipes/18/98/38/l06QUHwRQWMHbeqpX7wa_warm-chicken-white-bean-salad-7762.jpg">
+
+            </div>
+            <div class="info-box">
+               
+                    <h1>
+                        WARM CHIKEN & WHITE BEAN SALAD
+                    </h1>
+                
+
+            </div>
+        </div>
+        <div class="part">
+            <div class="photo">
+                <img src="https://img.sndimg.com/food/image/upload/w_752,h_423,fl_progressive,c_fill,q_80/v1/img/recipes/46/25/94/MwrTLl9tTi5LzTfU9XdA_kale%20salad-9820.jpg">
+
+            </div>
+            <div class="info-box">
+                
+                    <h1>
+                        CITRUSY KALE SALAD WITH BLUEBERRIES
+                    </h1>
+                
+
+            </div>
+        </div>
+        <div class="part">
+            <div class="photo">
+                <img src="https://img.sndimg.com/food/image/upload/w_752,h_423,c_fill,fl_progressive,q_80/v1/img/recipes/54/59/3/YWF41Ob5TiWQN0grrXR3_untitled-1894.jpg">
+
+            </div>
+            <div class="info-box">
+                
+                    <h1>
+                        COUSCOUS-CHICKPEA SALAD
+                    </h1>
+               
+
+            </div>
+        </div>
+        <div class="part">
+            <div class="photo">
+                <img src="https://img.sndimg.com/food/image/upload/w_752,h_423,c_fill,fl_progressive,q_80/v1/img/recipes/51/55/5/v2hwt340S5mF9LoThUlk_IMG_2512-cobb-salad-brown-derby-dresssing.jpg">
+
+            </div>
+            <div class="info-box">
+                
+                    <h1>
+                        COBB SALAD
+                    </h1>
+              
+
+            </div>
+        </div>
+        <div class="part">
+            <div class="photo">
+                <img src="https://img.sndimg.com/food/image/upload/w_752,h_423,fl_progressive,c_fill,q_80/v1/img/recipes/20/26/93/sn2NBT0cRLOI6hjX6GRY_portabella%20blue%20cheese%20salad.JPG">
+
+            </div>
+            <div class="info-box">
+                
+                    <h1>
+                        PORTABELLA & BLUE CHEESE SALAD
+                    </h1>
+                
+
+            </div>
+        </div>
+        <div class="part">
+            <div class="photo">
+                <img src="https://img.sndimg.com/food/image/upload/fl_progressive,c_fill,q_80,h_423,w_752/v1/img/recipes/18/48/40/Ygd0UxnRCWucd7eos48h_0S9A4432.jpg">
+
+            </div>
+            <div class="info-box">
+               
+                    <h1>
+                        BOK CHOY SALAD
+                    </h1>
+               
+
+            </div>
+        </div>
+        <div class="part">
+            <div class="photo">
+                <img src="https://img.sndimg.com/food/image/upload/fl_progressive,c_fill,q_80,h_406,w_721/v1/img/recipes/47/61/6/wPpEvwsRTRGLnsBWl0gn_december%20batch-2.jpg">
+
+            </div>
+            <div class="info-box">
+                
+                    <h1>
+                        CHICKEN SALAD
+                    </h1>
+               
+
+            </div>
+        </div>
+        <div class="part">
+            <div class="photo">
+                <img src="https://img.sndimg.com/food/image/upload/w_721,h_406,fl_progressive,c_fill,q_80/v1/img/recipes/38/33/28/bCS77UwjS6itdAkdLvAN_IAM_8146.jpg">
+
+            </div>
+            <div class="info-box">
+               
+                    <h1>
+                        GREENS WITH HONEY LEMON DRESSING
+                    </h1>
+               
+
+            </div>
+        </div>
+        <div class="part">
+            <div class="photo">
+                <img src="https://img.sndimg.com/food/image/upload/w_721,h_406,fl_progressive,c_fill,q_80/v1/img/recipes/48/18/44/cIW8yKQOTKy4KWURxjv9_PeachSalad3.jpg">
+
+            </div>
+            <div class="info-box">
+               
+                    <h1>
+                        PEACH SALAD WITH BALSAMIC DRESSING
+                    </h1>
+      
+
+            </div>
+        </div>
+        <div class="part">
+            <div class="photo">
+                <img src="https://img.sndimg.com/food/image/upload/w_721,h_406,fl_progressive,c_fill,q_80/v1/img/recipes/18/09/5/Muic3YJFSnyIHwobvLiz_CHICKENSALAD3%20(1%20of%201).jpg">
+
+            </div>
+            <div class="info-box">
+                
+                    <h1>
+                        APPLE SALAD
+                    </h1>
+                
+
+            </div>
+        </div>
+        <div class="part">
+            <div class="photo">
+                <img src="https://img.sndimg.com/food/image/upload/w_721,h_406,fl_progressive,c_fill,q_80/v1/img/recipes/35/68/nf8daPXTZSfYSKTmDSrg_THE%20FOOD%20GAYS%20-%20Cranberry%20Spinach%20Salad.jpg">
+
+            </div>
+            <div class="info-box">
+                
+                    <h1>
+                        CRANBERRY-SPINACH SALAD
+                    </h1>
+            </div>
+              
+        </div>
+        <div class="part">
+            <div class="photo">
+                <img src="https://img.sndimg.com/food/image/upload/w_721,h_406,fl_progressive,c_fill,q_80/v1/img/recipes/49/85/81/picxSxxCc.jpg">
+
+            </div>
+            <div class="info-box">
+                
+                    <h1>
+                        RAW KALE SALAD
+                    </h1>
+                
+
+            </div>
+        </div>
+
+
+
+        <footer class="footer">
+                <div class="footer-top">
+                    <div class="social-icons">
+                        <i class="fab fa-facebook-f"></i>
+                        <i class="fab fa-instagram"></i>
+                        <i class="fab fa-pinterest-p"></i>
+                        <i class="fab fa-twitter"></i>
+                        <i class="fab fa-youtube"></i>
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <div class="footer-links">
+                        <a href="#">All Categories</a>
+                        <a href="#">Site Map</a>
+                        <a href="#">About Us</a>
+                        <a href="#">Help</a>
+                    </div>
+                    <div class="back-to-top">
+                        <a href="#" class="back-to-top">
+                            <i class="fas fa-arrow-up"></i> BACK TO TOP
+                        </a>
+
+                    </div>
+                </div>
+
+                <div class="footer-bottom">
+                    <div class="footer-left">
+                        &copy; 2025 Warner Bros. Discovery, Inc. or its subsidiaries and affiliates. All rights reserved.
+                    </div>
+                    <div class="footer-right">
+                        <a href="#">Advertise</a>
+                        <a href="#">AdChoices</a>
+                        <a href="#">Privacy Policy</a>
+                        <a href="#">Visitor Agreement</a>
+                        <a href="#">California Privacy Policy</a>
+                        <a href="#"><strong>Do Not Sell or Share My Personal Information</strong></a>
+                    </div>
+                </div>
+            </footer>
+
+        
+    </div>
+
+    <script>
+// Handle social icon clicks
+document.addEventListener("DOMContentLoaded", function () {
+  const icons = document.querySelectorAll(".social-icons i");
+
+  icons.forEach(icon => {
+    icon.addEventListener("click", () => {
+      const classList = icon.classList;
+      if (classList.contains("fa-facebook-f")) {
+        window.open("https://www.facebook.com", "_blank");
+      } else if (classList.contains("fa-instagram")) {
+        window.open("https://www.instagram.com", "_blank");
+      } else if (classList.contains("fa-pinterest-p")) {
+        window.open("https://www.pinterest.com", "_blank");
+      } else if (classList.contains("fa-twitter")) {
+        window.open("https://www.twitter.com", "_blank");
+      } else if (classList.contains("fa-youtube")) {
+        window.open("https://www.youtube.com", "_blank");
+      } else if (classList.contains("fa-envelope")) {
+        window.location.href = "mailto:info@saladgallery.com";
+      }
+    });
+  });
+
+  // Fade-in effect on scroll
+  const faders = document.querySelectorAll(".fade-in");
+  const appearOptions = {
+    threshold: 0.1,
+    rootMargin: "0px 0px -50px 0px"
+  };
+
+  const appearOnScroll = new IntersectionObserver(function (entries, observer) {
+    entries.forEach(entry => {
+      if (!entry.isIntersecting) return;
+      entry.target.classList.add("appear");
+      observer.unobserve(entry.target);
+    });
+  }, appearOptions);
+
+  faders.forEach(fader => appearOnScroll.observe(fader));
+});
+</script>
+
+</body>
+</html>

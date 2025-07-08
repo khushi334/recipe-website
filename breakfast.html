@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+       
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #fffaf6;
+    color: #333;
+    line-height: 1.6;
+}
+
+.container {
+    width: 100%;
+    padding-bottom: 50px;
+}
+
+.header{
+            display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-left: 160px;
+      padding-right: 160px;
+      background-color: white;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+      position: sticky;
+      top: 0;
+      z-index: 10;
+
+        }
+        .nav-links {
+      display: flex;
+      gap: 100px;
+      list-style: none;
+
+    }
+
+    .nav-links li {
+      cursor: pointer;
+      font-weight: 500;
+      font-size: 30px;
+      text-decoration: none;
+    }
+    .nav-links li img{
+        display: flex;
+        gap: 100px;
+        height: 40px;
+        width: 40px;
+    }
+    .nav-links li a {
+    text-decoration: none;
+    color: black; 
+}
+
+.nav-links li a:hover {
+    color: #FF6347; 
+}
+.main {
+    text-align: center;
+    padding: 40px 20px;
+    background: linear-gradient(to right, #fff8f2, #ffece1);
+}
+
+.main img {
+    max-width: 90%;
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+}
+
+.main h1 {
+    font-size: 42px;
+    margin-top: 30px;
+    color: #d46a6a;
+}
+
+/* Food Sections */
+.food {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: center;
+    padding: 40px 20px;
+}
+
+.part {
+    background-color: #ffffff;
+    flex: 0 0 calc(50% - 40px);
+    border-radius: 16px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.part:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+}
+
+.part img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-bottom: 1px solid #eee;
+}
+
+.upper {
+    padding: 20px;
+}
+
+.part h2 {
+    font-size: 24px;
+    color: #ff6f61;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.part h3 {
+    font-size: 18px;
+    color: #555;
+    margin-top: 15px;
+}
+
+.items, .directions ul {
+    padding-left: 20px;
+    margin-top: 10px;
+    list-style: disc;
+}
+
+.items li, .directions ul li {
+    margin-bottom: 8px;
+    font-size: 15px;
+}
+.footer {
+  background-color: #000;
+  color: white;
+  font-family: Arial, sans-serif;
+  font-size: 13px;
+  padding: 20px;
+}
+
+.footer-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  padding-bottom: 15px;
+  border-bottom: 1px solid #444;
+}
+
+.social-icons i {
+  color: white;
+  margin: 0 8px;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.footer-links a {
+  margin: 0 10px;
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.footer-links a:hover {
+  text-decoration: underline;
+}
+
+.back-to-top {
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin-top: 15px;
+}
+
+.footer-bottom .footer-left {
+  flex: 1;
+  padding: 5px 0;
+}
+
+.footer-bottom .footer-right a {
+  margin: 0 10px;
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  white-space: nowrap;
+}
+
+.footer-bottom .footer-right a:hover {
+  text-decoration: underline;
+}
+html {
+  scroll-behavior: smooth;
+}
+
+@media (max-width: 768px) {
+    .part {
+        flex: 0 0 100%;
+    }
+    
+    .header {
+        flex-direction: column;
+        padding: 20px;
+    }
+
+    .nav-links {
+        gap: 30px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .main h1 {
+        font-size: 32px;
+    }
+}
+
+
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <ul class="nav-links">
+                <li><a href="home.html">Home</a></li>
+                <li><a href="#">Menu</a></li>
+                <li><a href="#">How it works</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Contact</a></li>
+                <li><img src="data:image/png;base64,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"></li>
+            </ul>
+        </div>
+        <div class="main">
+            <img src="https://img.sndimg.com/food/image/upload/w_752,h_423,c_fill,fl_progressive,q_80/v1/img/recipes/36/21/99/7YOiCPxdTkeIVDQ8e9w2_0S9A3939.jpg">
+            <h1>BREAKFAST AND BRUNCH RECIPES</h1>
+        </div>
+        <div class="food">
+            <div class="part">
+                <div class="upper">
+                    <img src="https://img.sndimg.com/food/image/upload/f_auto,c_thumb,q_55,w_744,ar_5:4/v1/img/recipes/93/03/7/UedChZI8R7ylnLU3hH77_farmer%2527s-quiche_0699.jpg">
+                    
+                    <h2>FARMER'S QUICHE</h2>
+                    <h3>INGREDIENTS</h3>
+                    <ul class="items">
+                        <li>1 cup brown rice</li>
+                        <li>1 egg</li>
+                        <li>1 tabelspoon BUTTER</li>
+                        <li>1/2 lb bacon</li>
+                        <li>1 cup buttermilk</li>
+                        <li>1 cup cream</li>
+                        <li>1/4 teaspoon pepper</li>
+                    </ul>
+                    <div class="directions">
+                        <h3>DIRECTIONS</h3>
+                        <ul>
+                            <li>Place rice in a saucepan along with 1 tablespoon butter, 2 cups water, and 1 teaspoon salt.</li>
+                            <li>Allow rice to sit off heat, covered, for 5-10 minutes more.</li>
+                            <li>Take 2 cups of the cooked rice and place in a mixing bowl along with 1 egg and 1/4 cup melted butter, mixing well</li>
+                            <li>Blind bake rice crust for 15 minutes at 350F and then remove from oven until filling</li>
+                            <li>Place crumbled bacon in the bottom of the rice crust.</li>
+                            <li> Pour egg mixture over the top of the vegetables and bacon.</li>
+                            <li>Sprinkle with grated cheese</li>
+                            <li>Bake at 350F for 30-35 minutes or until top is domed, golden brown, and a thin knife can be removed cleanly from the center of the quiche.</li>
+                            
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="part">
+                <div class="upper">
+                    <img src="https://img.sndimg.com/food/image/upload/f_auto,c_thumb,q_55,w_744,ar_5:4/v1/img/submissions/recipe/2001201872/kO3BWtURQW2yhom2qkQG_untitled-6428.jpg">
+                    <h2>CHOCOLATE & BANANA OVERNIGHT OATS</h2>
+                    <h3>INGREDIENTS</h3>
+                    <ul class="items">
+                            <li>2/3 cup oats</li>
+                            <li>2/3 cup milk</li>
+                            <li>2 atblespoons cocoa powder</li>
+                            <li>2 bananas</li>
+                            
+                    </ul>
+                    <div class="directions">
+                        <h3>DIRECTIONS</h3>
+                        <ul>
+                            <li>In a medium bowl, mix the oats, milk, cocoa powder and sugar.</li>
+                            <li>Mash one of the bananas and stir into the oats.</li>
+                            <li>Divide between two bowls or mason jars and store in the fridge overnight.</li>
+                            <li>In the morning, slice the other banana and top the oats with the sliced banana and chocolate chunks and serve.</li>
+                            
+                            
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="part">
+                <div class="upper">
+                    <img src="https://img.sndimg.com/food/image/upload/f_auto,c_thumb,q_55,w_744,ar_5:4/v1/img/recipes/82/11/9/hjuSNYQ6mtIctGEqGs7Q_21.jpg">
+                    <h2>MONTE CRISTO SANDWICH</h2>
+                    <h3>INGREDIENTS</h3>
+                    <ul class="items">
+                            <li>8 slices bread</li>
+                            <li>4 teaspoons honey mustard</li>
+                            <li>3 large eggs</li>
+                            <li>2 tabelspoons flour</li>
+                            <li>1 tabelspoon melted butter</li>
+                            <li>2 tabelspoons milk</li>
+                        
+                    </ul>
+                    <div class="directions">
+                        <h2>DIRECTIONS</h2>
+                        <ul>
+                            <li>Lightly butter a baking sheet pan. I use the spray.</li>
+                            <li>Spread 1/2 teaspoon mustard on each slice of bread.</li>
+                            <li>Layer between mustard sides of two slices of bread, 1 slice cheese, 2 slices ham, 2 slices turkey, and another slice of cheese.</li>
+                            <li>Blend in milk.</li>
+                            <li>Place on baking sheet; drizzle any remaining egg mixture</li>
+                            <li>Garnish with fresh raspberries.</li>
+
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="part">
+                <div class="upper">
+                    <img src="https://img.sndimg.com/food/image/upload/f_auto,c_thumb,q_55,w_744,ar_5:4/v1/img/recipes/26/04/76/tnFRdHRiS3GZ4bpRVlRT_breakfast-tater-tot-casserole-3522.jpg">
+                    <h2>BREAKFAST TATER-TOT CASSEROLE</h2>
+                    <h3>INGREDIENTS</h3>
+                    <ul class="items">
+                            <li>2 tablespoons butter</li>
+                            <li>4 eggs</li>
+                            <li>1 cup milk</li>
+                            <li>2 cups mozzarella cheese</li>
+                            <li>1 cup cream</li>
+                            
+                        
+                    </ul>
+                    <div class="directions">
+                        <h2>DIRECTIONS</h2>
+                        <ul>
+                            <li>Prepare a glass baking dish (at least 8x10) by spreading butter along the bottom and sides.</li>
+                            <li>In a bowl, mix eggs, milk, sour cream, chives, seasoned salt, hot sauce and salt and pepper and whisk until well blended.</li>
+                            <li>Add 2 cups cheddar and 1 cup mozzarella cheese and tots to mixture. Mix well until all tots are coated and all ingredients mixed.</li>
+                            <li>In small pan, cook sausage until just before done (sausage will finish in the oven), drain well and add to tot mixture.</li>
+                            <li>Bake at 350 degrees for 45 minutes or until topping is golden brown.</li>
+                            
+
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="part">
+                <div class="upper">
+                    <img src="https://img.sndimg.com/food/image/upload/f_auto,c_thumb,q_55,w_744,ar_5:4/v1/img/recipes/18/62/94/QCnEQxSWWr26hT0bVLYA_0S9A3033.jpg">
+                    <h2>GORDAN RAMSAY'S SCRAMBLED EGGS</h2>
+                    <h3>INGREDIENTS</h3>
+                    <ul class="items">
+                            <li>6 eggs</li>
+                            <li>25 g butter</li>
+                            <li>1 tabelspoon cream</li>
+                            
+                        
+                    </ul>
+                    <div class="directions">
+                        <h2>DIRECTIONS</h2>
+                        <ul>
+                            <li>Break eggs into a pan and add the cubed butter.</li>
+                            <li>Stir over a medium heat until the eggs start to cook. Remove from heat continue stirring eggs for about 20 second. Return to heat, continue to stir eggs until they start to clump, remove from heat and add the creme fraiche.</li>
+                            <li>Remove from heat when eggs are clumpy, but soft.</li>
+                            <li>Season with freshly ground black pepper and garnish with a sprinkling of chopped chives.</li>
+                           
+
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="part">
+                <div class="upper">
+                    <img src="https://img.sndimg.com/food/image/upload/f_auto,c_thumb,q_55,w_744,ar_5:4/v1/img/recipes/29/00/90/jxdMnofTMq3FDfTFnYsA_breakfast-crunchy_2785.jpg">
+                    <h2>BREAKFAST CRUNCHY</h2>
+                    <h3>INGREDIENTS</h3>
+                    <ul class="items">
+                            <li>8 tabelspoons yogurt</li>
+                            <li>8 tabelspoon berries</li>
+                            <li>1 tabelspoon artificial sweetner</li>
+                            
+                        
+                    </ul>
+                    <div class="directions">
+                        <h2>DIRECTIONS</h2>
+                        <ul>
+                            <li>In a tumbler or parfait glass, artfully layer 2-tablespoon portions of yogurt, cereal and fruit into the glass, continuing until ingredients are used up, or glass looks properly full and beautiful.</li>
+                            <li>End with the fruit (for prettiness sake), sprinkle with sweetener OR leave it out, according to your tastebuds.</li>
+                            <li>Enjoy!</li>
+                            
+
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="part">
+                <div class="upper">
+                    <img src="https://img.sndimg.com/food/image/upload/f_auto,c_thumb,q_55,w_744,ar_5:4/v1/img/recipes/16/93/74/r1ZRbiZ3TzG7j99oerky_THE%2520FOOD%2520GAYS%2520-%2520Fritata-2.jpg">
+                    <h2>MICROWAVE EGG FRITTATA</h2>
+                    <h3>INGREDIENTS</h3>
+                    <ul class="items">
+                            <li>2 eggs</li>
+                            <li>1/4 cup milk</li>
+                            <li>1 tomato</li>
+                            <li>1/3 cup cheese</li>
+                            
+                        
+                    </ul>
+                    <div class="directions">
+                        <h2>DIRECTIONS</h2>
+                        <ul>
+                            <li>Spray a microwave safe cereal sized bowl with the Pam.</li>
+                            <li>Wash the spinach, pat it dry, remove the stems, and tear it into edible sized pieces. (1/2 cup is my guess, I usually just grab a small fistful.) Toss into bottom of bowl.</li>
+                            <li>Beat the two eggs and milk in a separate cup lightly with a fork, pour over the mess in the bottom of the bowl (a lot of the stuff will float, especially the spinach and bacon). Sprinkle lightly with salt and pepper.</li>
+                            <li>Microwave on high for 3 minutes. (I don't know how many watts my microwave is--let it cook for about 20 seconds after the center puffs up even with the rest, and it should be done) Avoid overcooking or it will form a yucky crust of crunchy egg. The sooner you eat it, the fluffier it is. After 15 minutes of sitting, it will be cold, and about half of the size it was coming out of the microwave. I don't recommend letting it sit that long.</li>
+                            
+
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="part">
+                <div class="upper">
+                    <img src="https://img.sndimg.com/food/image/upload/w_752,h_423,c_fill,fl_progressive,q_80/v1/img/recipes/53/86/57/EatLHA5OQTW48h1dB58I_0S9A1952.jpg">
+                    <h2>TATER TOT RANCH SAUSAGE CUPS</h2>
+                    <h3>INGREDIENTS</h3>
+                    <ul class="items">
+                            <li>1/3 cup mayonnaise</li>
+                            <li>1/2 cup cream</li>
+                            <li>1 cup cheese</li>
+                            <li>1/2 cup red pepper</li>
+                            <li>1 tabelspoon chili flakes</li>
+                           
+                        
+                    </ul>
+                    <div class="directions">
+                        <h2>DIRECTIONS</h2>
+                        <ul>
+                            <li>Preheat oven to 400 degrees F. Spray a 12-well muffin tin with nonstick cooking spray. Place 5 tater tots in each well and bake for 20 minutes until tater tots are soft.</li>
+                            <li>Remove from oven and use the bottom of a shot glass or your fingers to press the tater tots flat on the bottom and up the sides of each well. Bake until golden and crisp, about 15 minutes.</li>
+                            <li>In a large bowl, stir to combine the sausage, Colby cheese, cheddar cheese, parmesan cheese, roasted red bell peppers, mayonnaise, sour cream, ranch seasoning and chopped scallion whites. Spoon the mixture into the tater tot cups, then return to the oven and bake until cheese is melted, about 6-8 minutes.</li>
+                            <li>Remove the cups from the muffin tin and top each with a sprinkle of scallion greens and pinch chili flakes.</li>
+                            
+
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="part">
+                <div class="upper">
+                    <img src="https://img.sndimg.com/food/image/upload/f_auto,c_thumb,q_55,w_744,ar_5:4/v1/img/recipes/23/73/94/02K3XFTRfqoji6twlwza_0S9A9432.jpg">
+                    <h2>BACON, EGG AND CHEESE BISCUIT</h2>
+                    <h3>INGREDIENTS</h3>
+                    <ul class="items">
+                            <li>6 biscuits</li>
+                            <li>6 slices canadian bacon</li>
+                            <li>5 eggs</li>
+                            <li>1/4 cup milk</li>
+                            <li> cheese</li>
+                            <li>Pepper</li>
+                        
+                    </ul>
+                    <div class="directions">
+                        <h2>DIRECTIONS</h2>
+                        <ul>
+                            <li>Spray a 6 cup muffin tin with non-stick cooking spray and set aside.</li>
+                            <li>In a small bowl, beat together the eggs and milk; salt and pepper to taste.</li>
+                            <li>Divide the egg mixture evenly between the prepared muffin tins and place in preheated oven.</li>
+                            <li>Remove from muffin tin and allow eggs to cool completely.</li>
+                            <li>When the eggs are cooled, place one on top of each slice of bacon.</li>
+                            <li>Wrap in foil and freeze until ready to enjoy.</li>
+
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="part">
+                <div class="upper">
+                    <img src="https://img.sndimg.com/food/image/upload/w_752,h_423,c_fill,fl_progressive,q_80/v1/img/recipes/45/09/76/aeWrbwFTeu2SXJVowt9H_IMG_9423.jpg">
+                    <h2>PINA COLADA SMOOTHIE</h2>
+                    <h3>INGREDIENTS</h3>
+                    <ul class="items">
+                            <li>1/2 banana</li>
+                            <li>1/2 cup crushed pineapple</li>
+                            <li>1/2 cup yogurt</li>
+                            <li>2 tabelspoon honey</li>
+                            <li>2-3 ice cubes</li>
+                            
+                        
+                    </ul>
+                    <div class="directions">
+                        <h2>DIRECTIONS</h2>
+                        <ul>
+                            <li>Blend all items together in a food processor or blender. Serve immediately.</li>
+                           
+
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+           
+
+            
+            <footer class="footer">
+                <div class="footer-top">
+                    <div class="social-icons">
+                        <i class="fab fa-facebook-f"></i>
+                        <i class="fab fa-instagram"></i>
+                        <i class="fab fa-pinterest-p"></i>
+                        <i class="fab fa-twitter"></i>
+                        <i class="fab fa-youtube"></i>
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <div class="footer-links">
+                        <a href="#">All Categories</a>
+                        <a href="#">Site Map</a>
+                        <a href="#">About Us</a>
+                        <a href="#">Help</a>
+                    </div>
+                    <div class="back-to-top">
+                        <a href="#" class="back-to-top">
+                            <i class="fas fa-arrow-up"></i> BACK TO TOP
+                        </a>
+
+                    </div>
+                </div>
+            <div class="footer-bottom">
+                    <div class="footer-left">
+                        &copy; 2025 Warner Bros. Discovery, Inc. or its subsidiaries and affiliates. All rights reserved.
+                    </div>
+                    <div class="footer-right">
+                        <a href="#">Advertise</a>
+                        <a href="#">AdChoices</a>
+                        <a href="#">Privacy Policy</a>
+                        <a href="#">Visitor Agreement</a>
+                        <a href="#">California Privacy Policy</a>
+                        <a href="#"><strong>Do Not Sell or Share My Personal Information</strong></a>
+                    </div>
+                </div>
+            </footer>
+
+
+            
+
+
+            
+
+        </div>
+    </div>
+
+</body>
+</html>
